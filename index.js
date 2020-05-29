@@ -21,10 +21,30 @@ function showTime() {
 
 
     var time = h + ":" + m + ":" + s + "" + session;
-    document.getElementById("MyClockDisplay").innerText= time;
-    document.getElementById("MyClockDisplay").textContent=time;
+    document.getElementById("MyClockDisplay").innerText = time;
+    document.getElementById("MyClockDisplay").textContent = time;
 
     setTimeOut(showTime, 1000);
 }
 
 showTime();
+
+
+    var x = document.getElementById("demo");
+    
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+    
+    function showPosition(position) {
+      x.innerHTML = "Latitude: " + position.coords.latitude + 
+      "<br>Longitude: " + position.coords.longitude;
+    }
+
+
+
+

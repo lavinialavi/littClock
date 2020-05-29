@@ -4,14 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheey' href="style.css">
-    <title>little Game</title>
+    <link rel='stylesheet' href="style.css">
+    <title>clock</title>
 </head>
 
 <body>
 
     <div id="MyClockDisplay" class="clock" onload="showTime()">
     </div>
+
+
+
+<div id="location">
+    <p>Click the button to get your coordinates.</p>
+
+    <button onclick="getLocation()">Try It</button>
+
+    <p id="demo"></p>
+
+</div>
+
 </body>
 
 <script src="index.js"></script>
