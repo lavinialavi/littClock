@@ -24,13 +24,13 @@ function showTime() {
     document.getElementById("MyClockDisplay").innerText = time;
     document.getElementById("MyClockDisplay").textContent = time;
 
-    setTimeOut(showTime, 1000);
+    setTimeout(showTime, 1000);
 }
 
 showTime();
 
 
-    var x = document.getElementById("demo");
+    var x = document.getElementById("all");
     
     function getLocation() {
       if (navigator.geolocation) {
@@ -39,12 +39,16 @@ showTime();
         x.innerHTML = "Geolocation is not supported by this browser.";
       }
     }
+
+    function initialize(position){
+        var lat=position.coord.latitude;
+        var long=position.coord.longitude;
+    }
     
     function showPosition(position) {
-      x.innerHTML = "Latitude: " + position.coords.latitude + 
+      x.innerHTML.innerHTML = "Latitude: " + position.coords.latitude + 
       "<br>Longitude: " + position.coords.longitude;
     }
-
 
 
 
