@@ -30,25 +30,33 @@ function showTime() {
 showTime();
 
 
-    var x = document.getElementById("all");
-    
-    function getLocation() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-      } else { 
+var x = document.getElementById("all");
+
+function getLocation() {
+
+
+
+    function locationNotReceived(positionError){
+        console.log(positionError);
+    }
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, locationNotReceived, {timeout:0});
+       var watch= navigator.geolocation.watchPosition(showPosition, locationNotReceived);
+       console.log(watch);
+       navigator.geolocation.clearWatch(watch);
+    } else {
         x.innerHTML = "Geolocation is not supported by this browser.";
-      }
     }
+}
 
-    function initialize(position){
-        var lat=position.coord.latitude;
-        var long=position.coord.longitude;
-    }
-    
-    function showPosition(position) {
-      x.innerHTML.innerHTML = "Latitude: " + position.coords.latitude + 
-      "<br>Longitude: " + position.coords.longitude;
-    }
 
+function showPosition(position) {
+    x.innerHTML.innerHTML = "Latitude: " + position.coords.latitude +
+        "<br>Longitude: " + position.coords.longitude;
+console.log(position);
+
+
+
+}
 
 

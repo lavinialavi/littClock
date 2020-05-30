@@ -14,7 +14,7 @@
 button{
     color: teal;
     text-align: center;
-    padding: 5px;
+    padding: 10px;
     border: 2px solid rgb(23, 24, 23); 
     
 }
@@ -24,8 +24,8 @@ p{
 #location{
 
     background-color:rgb(157, 216, 216);
-    padding: 2px;
-    margin: 20px;
+    padding: 10px;
+    margin: 30px;
     align-items: center;
 
 }
